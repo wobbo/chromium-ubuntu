@@ -2,13 +2,19 @@
 
 Install Chromium on Ubuntu 26.04 as a native `.deb` package instead of Snap.
 
-This uses the third-party XtraDeb PPA:
+## Chromium package: XtraDeb
+
+The Chromium `.deb` packages used here are built and maintained by the **XtraDeb project** through:
 
 ```text
 ppa:xtradeb/apps
 ```
 
-XtraDeb is not maintained by Google, Chromium or Canonical.
+XtraDeb is a third-party Ubuntu package project. It is not maintained by Google, the Chromium project or Canonical.
+
+**This repository does not build or maintain Chromium itself.** It only explains and automates how to install the XtraDeb Chromium package on Ubuntu 26.04.
+
+XtraDeb deserves the credit for providing the native Chromium `.deb` packages.
 
 ## Automatic installation
 
@@ -76,19 +82,29 @@ sudo apt update && sudo apt install chromium
 
 Chromium is now installed as a native `.deb` package.
 
-## Google services and Widevine
+## Google services
 
-Google services:
+Optional Google services for Chromium:
 
 https://github.com/wobbo/chromium-google-sync
 
-Widevine DRM:
+## Widevine DRM
+
+Widevine is Google's DRM system for protected video playback.
+
+It is needed by services such as **Netflix** and other streaming websites that use Widevine-protected video. Chromium can work normally without Widevine, but protected video may not play.
+
+Widevine installer:
 
 https://github.com/wobbo/chromium-widevine
 
 ## Author
 
+Installation guide and script:
+
 Ernst Lanser  
 <ernst.lanser@wobbo.org>
 
 https://github.com/wobbo/
+
+Chromium `.deb` packages are provided by **XtraDeb**.
