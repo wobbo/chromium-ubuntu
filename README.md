@@ -16,6 +16,8 @@ XtraDeb is a third-party Ubuntu package project. It is not maintained by Google,
 
 XtraDeb deserves the credit for providing the native Chromium `.deb` packages.
 
+**Many thanks to the XtraDeb project and its maintainers for the hard work of building, packaging and maintaining Chromium as native Ubuntu `.deb` packages.** Without their work, this installation method would not exist.
+
 ## Automatic installation
 
 ```bash
