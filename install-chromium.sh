@@ -8,6 +8,14 @@
 # Ernst Lanser <ernst.lanser@wobbo.org>
 # https://github.com/wobbo/
 #
+# Many thanks to the XtraDeb project and its maintainers for the hard work of 
+# building, packaging and maintaining Chromium as native Ubuntu .deb packages. 
+# Without their work, this installation method would not exist.
+# https://xtradeb.net/
+# https://salsa.debian.org/xtradeb-team
+#
+
+
 
 set -e
 
