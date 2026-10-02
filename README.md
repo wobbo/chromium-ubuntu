@@ -23,7 +23,7 @@ XtraDeb deserves the credit for providing the native Chromium `.deb` packages.
 ## Automatic installation
 
 ```bash
-wget -O install-chromium.sh https://raw.githubusercontent.com/wobbo/chromium-ubuntu/main/install-chromium.sh
+wget -O install-chromium.sh https://github.com/wobbo/chromium-ubuntu/releases/download/v1.1/install-chromium.sh
 chmod +x install-chromium.sh
 ./install-chromium.sh
 ```
