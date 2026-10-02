@@ -4,22 +4,20 @@
 #
 # Installs Chromium as a native .deb package from XtraDeb instead of Snap.
 #
-# 2026-10-01 v1.0
+# 2026-10-02 v1.1
 # Ernst Lanser <ernst.lanser@wobbo.org>
 # https://github.com/wobbo/
 #
-# Many thanks to the XtraDeb project and its maintainers for the hard work of 
-# building, packaging and maintaining Chromium as native Ubuntu .deb packages. 
+# Many thanks to the XtraDeb project and its maintainers for the hard work of
+# building, packaging and maintaining Chromium as native Ubuntu .deb packages.
 # Without their work, this installation method would not exist.
 # https://xtradeb.net/
 # https://salsa.debian.org/xtradeb-team
 #
 
-
-
 set -e
 
-echo "Native Chromium DEB Installer for Ubuntu 26.04"
+echo "Native Chromium DEB Installer for Ubuntu 26.04 v1.1"
 echo
 
 echo "Repairing APT/dpkg..."
@@ -50,7 +48,7 @@ echo "Adding XtraDeb..."
 sudo add-apt-repository -y ppa:xtradeb/apps
 
 echo
-echo "Configuring APT priority..."
+echo "Configuring APT priority and blocking Ubuntu Chromium Snap transition packages..."
 sudo tee /etc/apt/preferences.d/xtradeb-chromium >/dev/null <<'EOF'
 Package: *
 Pin: release o=LP-PPA-xtradeb-apps
@@ -59,6 +57,10 @@ Pin-Priority: 100
 Package: chromium*
 Pin: release o=LP-PPA-xtradeb-apps
 Pin-Priority: 700
+
+Package: chromium-browser chromium-browser-l10n chromium-chromedriver chromium-codecs-ffmpeg chromium-codecs-ffmpeg-extra
+Pin: release o=Ubuntu
+Pin-Priority: -1
 EOF
 
 echo
