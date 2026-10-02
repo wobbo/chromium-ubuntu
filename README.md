@@ -2,6 +2,8 @@
 
 Install Chromium on Ubuntu 26.04 as a native `.deb` package instead of Snap.
 
+Supports **AMD64** and **ARM64**. The installation is system-wide, so Chromium is available to all users on the computer.
+
 ## Chromium package: XtraDeb
 
 The Chromium `.deb` packages used here are built and maintained by the **XtraDeb project** through:
@@ -56,7 +58,7 @@ sudo apt update && sudo apt upgrade
 sudo add-apt-repository ppa:xtradeb/apps
 ```
 
-### 4. Give XtraDeb priority only for Chromium
+### 4. Give XtraDeb priority and block Ubuntu's Chromium Snap transition packages
 
 ```bash
 sudo nano /etc/apt/preferences.d/xtradeb-chromium
@@ -72,9 +74,13 @@ Pin-Priority: 100
 Package: chromium*
 Pin: release o=LP-PPA-xtradeb-apps
 Pin-Priority: 700
+
+Package: chromium-browser chromium-browser-l10n chromium-chromedriver chromium-codecs-ffmpeg chromium-codecs-ffmpeg-extra
+Pin: release o=Ubuntu
+Pin-Priority: -1
 ```
 
-This keeps normal Ubuntu packages on the Ubuntu repositories, while Chromium can come from XtraDeb.
+This keeps normal Ubuntu packages on the Ubuntu repositories, prefers XtraDeb for Chromium, and prevents Ubuntu's Chromium transition packages from reinstalling the Chromium Snap.
 
 ### 5. Install Chromium
 
@@ -82,7 +88,7 @@ This keeps normal Ubuntu packages on the Ubuntu repositories, while Chromium can
 sudo apt update && sudo apt install chromium
 ```
 
-Chromium is now installed as a native `.deb` package.
+Chromium is now installed system-wide as a native `.deb` package.
 
 ## Google services
 
@@ -99,6 +105,20 @@ It is needed by services such as **Netflix** and other streaming websites that u
 Widevine installer:
 
 https://github.com/wobbo/chromium-widevine
+
+## Version history
+
+### v1.1 — 2026-10-02
+
+- Blocks Ubuntu Chromium transition packages that can reinstall the Chromium Snap.
+- Keeps XtraDeb preferred for Chromium.
+- Clarifies that the installation is system-wide.
+- Clarifies AMD64 and ARM64 support.
+
+### v1.0 — 2026-10-01
+
+- Initial release.
+- Installs native Chromium `.deb` from XtraDeb on Ubuntu 26.04.
 
 ## Author
 
