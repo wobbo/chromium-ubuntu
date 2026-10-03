@@ -2,14 +2,14 @@
 
 Install Chromium as a native `.deb` package from **XtraDeb**.
 
-**Version 1.2 — 2026-10-03** · Ubuntu 26.04 · AMD64 and ARM64
+**Version 1.3 — 2026-10-03** · Ubuntu 26.04 · AMD64 and ARM64
 
 One system-wide installation serves all users. Each user has their own browser profile.
 
 ## Install
 
 ```bash
-wget -O install-chromium.sh https://raw.githubusercontent.com/wobbo/chromium-ubuntu/main/install-chromium.sh
+wget -O install-chromium.sh https://github.com/wobbo/chromium-ubuntu/releases/download/v1.3/install-chromium.sh
 chmod +x install-chromium.sh
 ./install-chromium.sh
 ```
