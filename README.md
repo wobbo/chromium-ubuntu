@@ -172,10 +172,3 @@ desktops, including a second user and a subsequent XtraDeb update.
 
 - Initial XtraDeb Chromium DEB installer for Ubuntu 26.04.
 
-## Author
-
-Installation guide and script: **Ernst Lanser**  
-<ernst.lanser@wobbo.org>  
-<https://github.com/wobbo/>
-
-Chromium `.deb` packages are provided by **XtraDeb**.
